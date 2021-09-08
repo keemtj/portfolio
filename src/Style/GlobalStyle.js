@@ -1,13 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const ResetStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   ${reset}
   *,
   * & {
     box-sizing: border-box;
+    color: ${({ theme }) => theme.fontColor}
   }
   html {
+    background: ${({ theme }) => theme.backgroundColor};
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   }
@@ -32,4 +34,4 @@ const ResetStyle = createGlobalStyle`
   }
 `;
 
-export default ResetStyle;
+export default GlobalStyle;
