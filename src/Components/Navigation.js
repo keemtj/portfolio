@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Menu } from '@styled-icons/entypo/Menu';
+import { Menu } from '@styled-icons/boxicons-regular/Menu';
 import { Close } from '@styled-icons/ionicons-sharp/Close';
 
 const Navigation = ({ mode, onToggleMode }) => {
