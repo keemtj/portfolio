@@ -1,11 +1,11 @@
 const light = {
-  backgroundColor: '#fff',
+  backgroundColor: '#ffffff',
   fontColor: '#202124',
 };
 
 const dark = {
   backgroundColor: '#202124',
-  fontColor: '#fff',
+  fontColor: '#ffffff',
 };
 
 const theme = {
