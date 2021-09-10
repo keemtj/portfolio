@@ -1,16 +1,22 @@
 import { useState } from 'react';
 
 const useThemeMode = () => {
-  const isBrowserDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)',
-  ).matches;
+  let initMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
 
-  const initMode = isBrowserDarkMode ? 'dark' : 'light';
+  const localMode = localStorage.getItem('mode');
+
+  if (localMode) {
+    initMode = localMode;
+  }
 
   const [mode, setMode] = useState(initMode);
 
   const onToggleMode = () => {
-    mode === 'light' ? setMode('dark') : setMode('light');
+    const setting = mode === 'light' ? 'dark' : 'light';
+    localStorage.setItem('mode', setting);
+    setMode(setting);
   };
 
   return [mode, onToggleMode];
