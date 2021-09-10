@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 const Header = ({ mode, onToggleMode, onScrollToTop }) => {
   return (
     <StHeader>
-      <StHeading onClick={onScrollToTop}>KEEMTJ</StHeading>
+      <StHeading onClick={onScrollToTop}>KIMTAEJIN</StHeading>
       <Navigation mode={mode} onToggleMode={onToggleMode} />
     </StHeader>
   );

@@ -10,6 +10,8 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
   }
   html, body  {
     width: 100%;

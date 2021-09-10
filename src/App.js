@@ -7,6 +7,7 @@ import Header from './Components/Header';
 import MainRouter from './Routers/MainRouter';
 import useThemeMode from './Hooks/useThemeMode';
 import Aside from './Components/Aside';
+import Footer from './Components/Footer';
 
 function App() {
   const [mode, onToggleMode] = useThemeMode();
@@ -29,6 +30,7 @@ function App() {
         onScrollToTop={onScrollToTop}
       />
       <MainRouter />
+      <Footer />
     </ThemeProvider>
   );
 }
