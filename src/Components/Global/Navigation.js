@@ -34,9 +34,9 @@ const Navigation = ({ mode, onToggleMode }) => {
           </HashLink>
         </StNavItem>
         <StNavItem>
-          <StToggleButton onClick={onToggleMode} open={open}>
+          <StToggleModeButton onClick={onToggleMode} open={open}>
             {mode === 'light' ? 'DARK' : 'LIGHT'}
-          </StToggleButton>
+          </StToggleModeButton>
         </StNavItem>
       </StNavigation>
       <StBurgur onClick={onClickMenu}>
@@ -79,22 +79,12 @@ const StNavigation = styled.ul`
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    margin-top: 1.5rem;
-    width: 100%;
-    font-size: 2.5rem;
-    & > li + li {
-      margin-top: 1rem;
-    }
-  }
-  /* phone */
-  @media ${({ theme }) => theme.phone} {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 2;
-    margin-top: 0;
     width: 100%;
     height: 100%;
     background: ${({ theme }) => theme.backgroundColor};
@@ -113,13 +103,21 @@ const StNavItem = styled.li`
       display: block;
     }
   }
+
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    & + & {
+      margin-top: 1.5rem;
+    }
+  }
 `;
 
-const StToggleButton = styled.button`
+const StToggleModeButton = styled.button`
   color: ${({ theme }) => theme.fontColor};
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  font-style: inherit;
   &:hover {
     color: gray;
   }
@@ -127,20 +125,9 @@ const StToggleButton = styled.button`
 
 const StBurgur = styled.button`
   display: none;
+
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    display: block;
-    padding: 1rem;
-    width: 5.5rem;
-    height: 5.5rem;
-    color: ${({ theme }) => theme.fontColor};
-  }
-  /* phone */
-  @media ${({ theme }) => theme.phone} {
     position: fixed;
     top: 0;
     right: 0;

@@ -28,15 +28,15 @@ const StHeader = styled.header`
 
   /* laptop */
   @media ${({ theme }) => theme.laptop} {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    font-size: 2.5rem;
-    height: fit-content;
     flex-flow: column nowrap;
     align-items: center;
     padding: 1.5rem;
+    height: fit-content;
+    font-size: 3rem;
   }
 `;
 

@@ -2,16 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import HomeSection from './HomeSection';
 import AboutSection from './AboutSection';
-import ProjectSection from './ProjectSection';
-import ContactSection from './ContactSection';
+// import ProjectSection from './ProjectSection';
+// import ContactSection from './ContactSection';
 
 const Home = () => {
   return (
     <StMain>
       <HomeSection />
       <AboutSection />
-      <ProjectSection />
-      <ContactSection />
+      {/* <ProjectSection /> */}
+      {/* <ContactSection /> */}
     </StMain>
   );
 };

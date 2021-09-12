@@ -16,7 +16,7 @@ const StAside = styled.aside`
   position: fixed;
   bottom: 0;
   right: 0;
-  z-index: 9999;
+  z-index: 2;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-end;
@@ -24,15 +24,8 @@ const StAside = styled.aside`
   padding: 3rem;
   font-size: 3rem;
   font-weight: 900;
+  font-style: inherit;
 
-  /* laptop */
-  @media ${({ theme }) => theme.laptop} {
-    font-size: 2.5rem;
-  }
-  /* tablet */
-  @media ${({ theme }) => theme.tablet} {
-    font-size: 2.5rem;
-  }
   @media ${({ theme }) => theme.mobile} {
     padding: 1.5rem;
   }
@@ -47,9 +40,13 @@ const StToggleButton = styled.button`
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  font-style: inherit;
+
   &:hover {
     color: gray;
   }
+
+  /* mobile */
   @media ${({ theme }) => theme.mobile} {
     display: none;
   }
@@ -60,6 +57,8 @@ const StScrollToTopButton = styled.button`
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
+  font-style: inherit;
+
   &:hover {
     color: gray;
   }

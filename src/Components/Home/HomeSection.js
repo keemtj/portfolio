@@ -26,10 +26,6 @@ const StBackground = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  color: ${({ theme }) => theme.fontColor};
-  font-size: 12rem;
-  font-weight: 900;
-  font-style: italic;
 `;
 
 const StTextBox = styled.div`
@@ -37,6 +33,23 @@ const StTextBox = styled.div`
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
+  color: ${({ theme }) => theme.fontColor};
+  font-size: 12rem;
+  font-weight: 900;
+  font-style: italic;
+
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 9rem;
+  }
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 6rem;
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 4rem;
+  }
 `;
 
 export default HomeSection;
