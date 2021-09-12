@@ -6,12 +6,19 @@ const GlobalStyle = createGlobalStyle`
   *,
   * & {
     box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   html {
     font-size: 10px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     scroll-snap-type: y proximity;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
   html, body  {
     width: 100%;
@@ -31,6 +38,13 @@ const GlobalStyle = createGlobalStyle`
     font-size: 10px;
     outline: none;
     line-height: 1;
+  }
+  a{
+    color: ${({ theme }) => theme.fontColor};
+    text-decoration: none;
+    &:hover {
+      color: gray;
+    }
   }
   h1, h2, h3, h4, h5, h6, ol, li, button, input {
     cursor: pointer;

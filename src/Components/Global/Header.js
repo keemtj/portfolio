@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 const Header = ({ mode, onToggleMode, onScrollToTop }) => {
   return (
     <StHeader>
-      <StHeading onClick={onScrollToTop}>KIMTAEJIN</StHeading>
+      <StHeading onClick={onScrollToTop}>KEEMTJ</StHeading>
       <Navigation mode={mode} onToggleMode={onToggleMode} />
     </StHeader>
   );
@@ -14,7 +14,7 @@ const Header = ({ mode, onToggleMode, onScrollToTop }) => {
 const StHeader = styled.header`
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 9999;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
