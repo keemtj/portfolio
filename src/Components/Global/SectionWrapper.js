@@ -7,9 +7,10 @@ const SectionWrapper = ({ id, children }) => {
 
 const StSection = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   color: ${({ theme }) => theme.fontColor};
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 `;
 
 export default SectionWrapper;

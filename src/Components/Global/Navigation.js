@@ -94,7 +94,7 @@ const StNavigation = styled.ul`
 
 const StNavItem = styled.li`
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
   &:last-child {
     display: none;
@@ -119,7 +119,7 @@ const StToggleModeButton = styled.button`
   font-weight: inherit;
   font-style: inherit;
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
 `;
 
@@ -142,13 +142,13 @@ const StBurgur = styled.button`
 
 const StMenuIcon = styled(Menu)`
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
 `;
 
 const StCloseIcon = styled(Close)`
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
 `;
 

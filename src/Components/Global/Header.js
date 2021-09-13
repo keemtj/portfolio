@@ -19,6 +19,7 @@ const StHeader = styled.header`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
+  background: ${({ theme }) => theme.headerBgColor};
   padding: 3rem;
   margin: 0 auto;
   width: 100%;
@@ -35,14 +36,13 @@ const StHeader = styled.header`
     flex-flow: column nowrap;
     align-items: center;
     padding: 1.5rem;
-    height: fit-content;
     font-size: 3rem;
   }
 `;
 
 const StHeading = styled.h1`
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {

@@ -11,10 +11,23 @@ const ProjectSection = () => {
 };
 
 const StHeading = styled.h2`
+  padding: 9rem 3rem 3rem 3rem;
   font-size: 9rem;
   font-weight: 900;
-  font-style: italic;
-  padding: 6rem 3rem 3rem 3rem;
+
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 9rem;
+  }
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 6rem;
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    padding: 9rem 1.5rem 1.5rem 1.5rem;
+    font-size: 4rem;
+  }
 `;
 
 export default ProjectSection;

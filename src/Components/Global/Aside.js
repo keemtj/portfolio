@@ -43,7 +43,7 @@ const StToggleButton = styled.button`
   font-style: inherit;
 
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
 
   /* mobile */
@@ -60,7 +60,7 @@ const StScrollToTopButton = styled.button`
   font-style: inherit;
 
   &:hover {
-    color: gray;
+    color: ${({ theme }) => theme.emphasis};
   }
 `;
 

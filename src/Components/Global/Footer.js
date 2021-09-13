@@ -9,7 +9,13 @@ const Footer = () => {
         ©2021 Jay Kim All Rights Reserved. Web Front-end developer portfolio.
       </div>
       <div>
-        <StIcon />
+        <a
+          href="https://github.com/keemtj"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <StIcon />
+        </a>
       </div>
     </StFooter>
   );
@@ -20,7 +26,7 @@ const StFooter = styled.footer`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: start;
+  scroll-snap-align: end;
   height: 10rem;
   font-size: 1.5rem;
 `;
