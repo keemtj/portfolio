@@ -52,6 +52,7 @@ const StHeading = styled.h2`
   padding: 9rem 3rem 3rem 3rem;
   font-size: 9rem;
   font-weight: 900;
+  cursor: default;
 
   /* laptop */
   @media ${({ theme }) => theme.laptop} {
