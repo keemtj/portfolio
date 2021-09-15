@@ -33,7 +33,7 @@ const StTextBox = styled.div`
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
-  color: ${({ theme }) => theme.fontColor};
+  color: ${({ theme }) => theme.white};
   font-size: 12rem;
   font-weight: 900;
   font-style: italic;
