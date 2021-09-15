@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "cra-template": "1.1.2",
+    "emailjs-com": "^3.2.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
     "react": "^17.0.2",
