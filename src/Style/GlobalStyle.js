@@ -47,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.emphasis}
     }
   }
-  h1, h2, h3, h4, h5, h6, ol, li, button, input {
+  h1, h2, h3, h4, h5, h6, ol, li, button {
     cursor: pointer;
   }
 `;

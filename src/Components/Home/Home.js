@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import HomeSection from './HomeSection';
 import AboutSection from './AboutSection';
 import ProjectSection from './ProjectSection';
-// import ContactSection from './ContactSection';
+import ContactSection from './ContactSection';
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <HomeSection />
       <AboutSection />
       <ProjectSection />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </StMain>
   );
 };
