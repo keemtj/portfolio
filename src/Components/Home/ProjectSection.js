@@ -152,7 +152,7 @@ const StImage = styled.img`
   ${({ hover }) =>
     hover &&
     css`
-      transform: scale(110%);
+      transform: scale(1.1);
     `}
 `;
 
