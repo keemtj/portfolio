@@ -35,23 +35,23 @@ const useInputs = () => {
     dispatch({ type: 'CHANGE', name, value });
   };
 
-  const onSubmit = ({ target, preventDefault }) => {
-    preventDefault();
-    console.log(target);
-    // sendForm(
-    //   process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    //   process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-    //   target,
-    //   process.env.REACT_APP_EMAILJS_USER_ID,
-    // ).then(
-    //   result => {
-    //     console.log('Success status: 200,', result.text);
-    //     dispatch({ type: 'RESET' });
-    //   },
-    //   error => {
-    //     console.log('Failure status: 400,', error.text);
-    //   },
-    // );
+  const onSubmit = e => {
+    e.preventDefault();
+
+    sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      e.target,
+      process.env.REACT_APP_EMAILJS_USER_ID,
+    ).then(
+      result => {
+        console.log('Success status: 200,', result.text);
+        dispatch({ type: 'RESET' });
+      },
+      error => {
+        console.log('Failure status: 400,', error.text);
+      },
+    );
   };
 
   // const onSubmit = e => {
