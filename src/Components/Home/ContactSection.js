@@ -1,59 +1,79 @@
 import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import useInputs from '../../Hooks/useInputs';
-import { init } from 'emailjs-com';
 
 const ContactSection = () => {
   const [form, onChange, onSubmit] = useInputs();
-  const { name, email, subject, message } = form;
-
-  React.useEffect(() => {
-    init(process.env.REACT_APP_EMAILJS_USER_ID);
-  });
+  const { name, email, phone, subject, message } = form;
 
   return (
     <SectionWrapper id="contact">
       <StHeading>CONTACT</StHeading>
       <StContact>
         <StForm onSubmit={onSubmit} autoComplete="off">
-          <label htmlFor="name">성명</label>
-          <input
-            id="name"
-            onChange={onChange}
-            type="text"
-            name="name"
-            value={name}
-            placeholder="name"
-          />
-          <label htmlFor="email">이메일</label>
-          <input
-            id="email"
-            onChange={onChange}
-            type="email"
-            name="email"
-            value={email}
-            placeholder="email"
-          />
-          <label htmlFor="subject">제목</label>
-          <input
-            id="subject"
-            onChange={onChange}
-            type="text"
-            name="subject"
-            value={subject}
-            placeholder="subject"
-          />
-          <label htmlFor="message">메시지</label>
-          <textarea
-            id="message"
-            onChange={onChange}
-            type="text"
-            name="message"
-            value={message}
-            placeholder="message"
-          />
-          <StButton type="submit">보내기</StButton>
+          <StInputWrapper>
+            {/* <StLabel htmlFor="email">EMAIL</StLabel> */}
+            <StInput
+              id="email"
+              onChange={onChange}
+              type="text"
+              name="email"
+              value={email}
+              placeholder="YOUR EMAIL *"
+              required
+            />
+          </StInputWrapper>
+          <StInputWrapper>
+            {/* <StLabel htmlFor="name">NAME</StLabel> */}
+            <StInput
+              id="name"
+              onChange={onChange}
+              type="text"
+              name="name"
+              value={name}
+              placeholder="YOUR NAME *"
+              required
+            />
+          </StInputWrapper>
+          <StInputWrapper>
+            {/* <StLabel htmlFor="phone">PHONE</StLabel> */}
+            <StInput
+              id="phone"
+              onChange={onChange}
+              type="text"
+              name="phone"
+              value={phone}
+              placeholder="YOUR PHONE *"
+              required
+            />
+          </StInputWrapper>
+          <StInputWrapper>
+            {/* <StLabel htmlFor="subject">SUBJECT</StLabel> */}
+            <StInput
+              id="subject"
+              onChange={onChange}
+              type="text"
+              name="subject"
+              value={subject}
+              placeholder="SUBJECT *"
+              required
+            />
+          </StInputWrapper>
+          <StInputWrapper>
+            {/* <StLabel htmlFor="message">MESSAGE</StLabel> */}
+            <StTextarea
+              id="message"
+              onChange={onChange}
+              type="text"
+              name="message"
+              value={message}
+              placeholder="MESSAGE *"
+              rows="10"
+              required
+            />
+          </StInputWrapper>
+          <StButton type="submit">SEND</StButton>
         </StForm>
       </StContact>
     </SectionWrapper>
@@ -83,17 +103,14 @@ const StHeading = styled.h2`
 
 const StContact = styled.div`
   width: 100%;
-  padding: 3rem;
+  padding: 0rem 3rem;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
   justify-content: flex-start;
-  row-gap: 3rem;
-  column-gap: 3rem;
 
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    flex-flow: column nowrap;
     padding: 1.5rem;
   }
   /* phone */
@@ -105,17 +122,107 @@ const StContact = styled.div`
 const StForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid red;
+  gap: 3rem;
   width: 100%;
+
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+`;
+
+const StInputWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+`;
+
+const inputStyle = css`
+  border-radius: unset;
+  padding: 1rem;
+  width: 60%;
+  font-size: 2.5rem;
+  font-weight: 900;
+  &::placeholder {
+    color: gray;
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    width: 65%;
+  }
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    width: 100%;
+    font-size: 2rem;
+    &::placeholder {
+      font-size: 2rem;
+    }
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    width: 100%;
+    font-size: 1.5rem;
+    &::placeholder {
+      font-size: 1.5rem;
+    }
+  }
+`;
+
+const StInput = styled.input`
+  border-bottom: 3px solid ${({ theme }) => theme.fontColor};
+  height: 5rem;
+  ${inputStyle}
+`;
+
+const StTextarea = styled.textarea`
+  border: 3px solid ${({ theme }) => theme.fontColor};
+  ${inputStyle}
 `;
 
 const StButton = styled.button`
+  border: 3px solid ${({ theme }) => theme.fontColor};
+  background: ${({ theme }) => theme.backgroundColor};
+  width: 60%;
+  height: 5rem;
   color: ${({ theme }) => theme.fontColor};
-  border: 1px solid red;
-  width: 10rem;
-  height: 10rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: inherit;
+  font-style: italic;
+  &:hover,
+  &:focus {
+    ${({ theme }) => {
+      console.log(theme.state);
+      return theme.state === 'light'
+        ? css`
+            background: ${theme.black};
+            color: ${theme.white};
+          `
+        : css`
+            background: ${theme.white};
+            color: ${theme.black};
+          `;
+    }}
+  }
+
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    width: 65%;
+  }
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 1.5rem;
+  }
 `;
 
 export default ContactSection;

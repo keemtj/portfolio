@@ -1,22 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Github } from '@styled-icons/boxicons-logos/Github';
+import styled, { css } from 'styled-components';
 
 const Footer = () => {
   return (
     <StFooter>
-      <div>
-        ©2021 Jay Kim All Rights Reserved. Web Front-end developer portfolio.
-      </div>
-      <div>
-        <a
-          href="https://github.com/keemtj"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <StIcon />
-        </a>
-      </div>
+      <div>©2021 Taejin Kim All Rights Reserved.</div>
+      <div>Web Front-end developer portfolio.</div>
     </StFooter>
   );
 };
@@ -29,11 +18,35 @@ const StFooter = styled.footer`
   scroll-snap-align: end;
   height: 10rem;
   font-size: 1.5rem;
-`;
+  font-weight: 700;
+  font-style: normal;
 
-const StIcon = styled(Github)`
-  width: 1.5rem;
-  height: 1.5rem;
+  ${({ theme }) => {
+    console.log(theme.state);
+    return theme.state === 'light'
+      ? css`
+          background: ${theme.black};
+          color: ${theme.white};
+        `
+      : css`
+          background: ${theme.white};
+          color: ${theme.black};
+        `;
+  }}
+
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    padding: 1rem;
+  }
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    padding: 1rem;
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    padding: 1.5rem;
+    flex-flow: column nowrap;
+  }
 `;
 
 export default Footer;

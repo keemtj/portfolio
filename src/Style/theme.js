@@ -1,4 +1,5 @@
 const light = {
+  state: 'light',
   white: '#ffffff',
   black: '#202124',
   backgroundColor: '#ffffff',
@@ -12,6 +13,7 @@ const light = {
 };
 
 const dark = {
+  state: 'dark',
   white: '#ffffff',
   black: '#202124',
   backgroundColor: '#202124',

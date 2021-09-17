@@ -1,5 +1,5 @@
-import { useReducer } from 'react';
-import { sendForm } from 'emailjs-com';
+import { useReducer, useEffect } from 'react';
+import { init, sendForm } from 'emailjs-com';
 
 const initialState = {
   email: '',
@@ -30,8 +30,9 @@ const reducer = (state, action) => {
 const useInputs = () => {
   const [form, dispatch] = useReducer(reducer, initialState);
 
-  const onChange = ({ target }) => {
-    const { name, value } = target;
+  const onChange = e => {
+    const { name, value } = e.target;
+    console.log(name, value);
     dispatch({ type: 'CHANGE', name, value });
   };
 
@@ -54,10 +55,9 @@ const useInputs = () => {
     );
   };
 
-  // const onSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch({ type: 'RESET' });
-  // };
+  useEffect(() => {
+    init(process.env.REACT_APP_EMAILJS_USER_ID);
+  });
 
   return [form, onChange, onSubmit];
 };

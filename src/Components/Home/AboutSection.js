@@ -15,7 +15,7 @@ const AboutSection = () => {
           내일의 양분이 되어 어제보다 <StEmphasis>성장</StEmphasis>
           하고 있음에 하루하루 즐겁게 개발하고 있습니다. 언제나 문제를 해결하기
           위한 <StEmphasis>집요함</StEmphasis>과 <StEmphasis>끈기</StEmphasis>가
-          있고 비로소 해결했을 때 강한 성취감을 느낍니다. 동료와 의견, 코드 혹은
+          있고 마침내 해결했을 때 강한 성취감을 느낍니다. 동료와 의견, 코드 혹은
           개발에 대해 이야기를 <StEmphasis>공유</StEmphasis>하는 것을
           좋아합니다. 당장 앞만 보고 달리는 것이 아닌{' '}
           <StEmphasis>목표</StEmphasis>를 갖고 꾸준히 성장하는 개발자가 되고
