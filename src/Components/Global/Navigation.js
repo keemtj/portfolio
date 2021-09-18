@@ -10,6 +10,15 @@ const Navigation = ({ mode, onToggleMode }) => {
     setOpen(!open);
   };
 
+  // const handleNavState = () => {
+  //   window.innerWidth === 768 && open && setOpen(false);
+  // };
+
+  // React.useEffect(() => {
+  //   window.addEventListener('resize', handleNavState);
+  //   return () => window.removeEventListener('resize', handleNavState);
+  // });
+
   return (
     <StNavWrapper>
       <StNavigation open={open} setOpen={setOpen}>
@@ -34,7 +43,7 @@ const Navigation = ({ mode, onToggleMode }) => {
           </HashLink>
         </StNavItem>
         <StNavItem>
-          <StToggleModeButton onClick={onToggleMode} open={open}>
+          <StToggleModeButton onClick={onToggleMode}>
             {mode === 'light' ? 'DARK' : 'LIGHT'}
           </StToggleModeButton>
         </StNavItem>
@@ -125,6 +134,7 @@ const StToggleModeButton = styled.button`
 
 const StBurgur = styled.button`
   display: none;
+  color: ${({ theme }) => theme.fontColor};
 
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
@@ -136,7 +146,13 @@ const StBurgur = styled.button`
     padding: 1rem;
     width: 5.5rem;
     height: 5.5rem;
-    color: ${({ theme }) => theme.fontColor};
+  }
+
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
   }
 `;
 

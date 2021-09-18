@@ -29,14 +29,19 @@ const StHeader = styled.header`
 
   /* laptop */
   @media ${({ theme }) => theme.laptop} {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
     flex-flow: column nowrap;
     align-items: center;
     padding: 1.5rem;
-    font-size: 3rem;
+  }
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    height: 4rem;
+    font-size: 2rem;
+    padding: 1rem;
   }
 `;
 

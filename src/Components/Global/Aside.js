@@ -29,10 +29,6 @@ const StAside = styled.aside`
   @media ${({ theme }) => theme.mobile} {
     padding: 1.5rem;
   }
-  /* phone */
-  @media ${({ theme }) => theme.phone} {
-    z-index: 0;
-  }
 `;
 
 const StToggleButton = styled.button`

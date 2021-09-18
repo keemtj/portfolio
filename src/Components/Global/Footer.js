@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const Footer = () => {
   return (
@@ -15,24 +15,13 @@ const StFooter = styled.footer`
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-  scroll-snap-align: end;
-  height: 10rem;
-  font-size: 1.5rem;
-  font-weight: 700;
+  background: ${({ theme }) => theme.backgroundColor};
+  height: 5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
   font-style: normal;
-
-  ${({ theme }) => {
-    console.log(theme.state);
-    return theme.state === 'light'
-      ? css`
-          background: ${theme.black};
-          color: ${theme.white};
-        `
-      : css`
-          background: ${theme.white};
-          color: ${theme.black};
-        `;
-  }}
+  color: ${({ theme }) => theme.fontColor};
+  scroll-snap-align: end;
 
   /* laptop */
   @media ${({ theme }) => theme.laptop} {
