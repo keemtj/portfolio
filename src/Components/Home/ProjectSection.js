@@ -1,13 +1,13 @@
 import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
 import styled, { css } from 'styled-components';
-// import { useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 
 const ProjectSection = () => {
   const [hover, setHover] = React.useState(null);
   const onMouseEnter = index => setHover(index);
   const onMouseLeave = () => setHover(null);
-  // const history = useHistory();
+  const history = useHistory();
   const images = [
     {
       filename: 'insta.png',
@@ -40,13 +40,13 @@ const ProjectSection = () => {
               key={index}
               onMouseEnter={() => onMouseEnter(index)}
               onMouseLeave={onMouseLeave}
-              // onClick={() => history.push(`/project?name=${name}`)}
+              onClick={() => history.push(`/project?name=${name}`)}
             >
               <StImageWrapper>
                 {hover === index && (
                   <>
                     <StCover />
-                    <StCoverText>VIEW PROJECT</StCoverText>
+                    <StCoverText>VIEW DETAILS</StCoverText>
                   </>
                 )}
                 <StImage

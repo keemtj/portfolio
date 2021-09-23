@@ -13,9 +13,7 @@ const ContactSection = () => {
       <StContact>
         <StForm onSubmit={onSubmit} autoComplete="off">
           <StInputWrapper>
-            {/* <StLabel htmlFor="email">EMAIL</StLabel> */}
             <StInput
-              id="email"
               onChange={onChange}
               type="text"
               name="email"
@@ -25,9 +23,7 @@ const ContactSection = () => {
             />
           </StInputWrapper>
           <StInputWrapper>
-            {/* <StLabel htmlFor="name">NAME</StLabel> */}
             <StInput
-              id="name"
               onChange={onChange}
               type="text"
               name="name"
@@ -37,9 +33,7 @@ const ContactSection = () => {
             />
           </StInputWrapper>
           <StInputWrapper>
-            {/* <StLabel htmlFor="phone">PHONE</StLabel> */}
             <StInput
-              id="phone"
               onChange={onChange}
               type="text"
               name="phone"
@@ -49,9 +43,7 @@ const ContactSection = () => {
             />
           </StInputWrapper>
           <StInputWrapper>
-            {/* <StLabel htmlFor="subject">SUBJECT</StLabel> */}
             <StInput
-              id="subject"
               onChange={onChange}
               type="text"
               name="subject"
@@ -61,9 +53,7 @@ const ContactSection = () => {
             />
           </StInputWrapper>
           <StInputWrapper>
-            {/* <StLabel htmlFor="message">MESSAGE</StLabel> */}
             <StTextarea
-              id="message"
               onChange={onChange}
               type="text"
               name="message"
