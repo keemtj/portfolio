@@ -3,11 +3,7 @@ const light = {
   white: '#ffffff',
   black: '#202124',
   backgroundColor: '#ffffff',
-  headerBgColor: `linear-gradient(
-    to bottom,
-    gray,
-    transparent 100%
-  )`,
+  headerBgColor: 'rgba(255, 255, 255, 0.5)',
   fontColor: '#202124',
   emphasis: '#ED4956',
 };
@@ -17,12 +13,7 @@ const dark = {
   white: '#ffffff',
   black: '#202124',
   backgroundColor: '#202124',
-  headerBgColor: `linear-gradient(
-    to bottom,
-    #202124,
-    50%,
-    transparent
-  )`,
+  headerBgColor: 'rgba(32, 33, 36, 0.5)',
   fontColor: '#ffffff',
   emphasis: '#ED4956',
 };
