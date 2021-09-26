@@ -8,7 +8,7 @@ const ProjectSection = () => {
   const onMouseEnter = index => setHover(index);
   const onMouseLeave = () => setHover(null);
   const history = useHistory();
-  const images = [
+  const projects = [
     {
       filename: 'insta.png',
       name: 'instagram',
@@ -30,11 +30,12 @@ const ProjectSection = () => {
       name: 'countdown',
     },
   ];
+
   return (
     <SectionWrapper id="project">
       <StHeading>PROJECT</StHeading>
       <StProjects>
-        {images.map(({ filename, name }, index) => {
+        {projects.map(({ filename, name }, index) => {
           return (
             <StProjectItem
               key={index}

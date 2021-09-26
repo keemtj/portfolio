@@ -1,32 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionWrapper from '../Global/SectionWrapper';
+import * as data from '../../Data/projects.js';
+import { useHistory, useLocation } from 'react-router';
 import qs from 'qs';
-import { useLocation } from 'react-router';
+import ProjectItem from './ProjectItem';
 
 const Project = () => {
+  const history = useHistory();
   const { search } = useLocation();
   const query = qs.parse(search, {
     ignoreQueryPrefix: true,
   });
-  const name = query.name;
-  console.log(name);
+  const hasQueryName = query.name;
+  console.log(hasQueryName);
+
+  const onMoveDetailsPage = project => {
+    history.push(`/project?name=${project.name}`);
+  };
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <SectionWrapper>
-      <StHeading>{name.toUpperCase()}</StHeading>
-      <StProject>
-        <div>
-          <div>{name.toUpperCase()}</div>
-          <div>프로젝트 설명</div>
-          <div>프로젝트 기술</div>
-          <div>프로젝트 기능</div>
-        </div>
-        <div>프로젝트 이미지</div>
-      </StProject>
+      {hasQueryName ? (
+        <ProjectItem />
+      ) : (
+        <>
+          <StHeading>ALL PROJECTS</StHeading>
+          <StProjects>
+            {data.projects().map((project, index) => {
+              return (
+                <StProject
+                  key={index}
+                  onClick={() => onMoveDetailsPage(project)}
+                >
+                  {project.name.toUpperCase()}
+                </StProject>
+              );
+            })}
+          </StProjects>
+        </>
+      )}
     </SectionWrapper>
   );
 };
@@ -52,24 +68,32 @@ const StHeading = styled.h2`
   }
 `;
 
-const StProject = styled.ul`
+const StProjects = styled.ul`
   width: 100%;
   padding: 3rem;
   display: flex;
-  flex-flow: row wrap;
-  align-items: center;
+  flex-flow: column wrap;
+  align-items: flex-start;
   justify-content: flex-start;
   row-gap: 3rem;
   column-gap: 3rem;
+  font-size: 8rem;
+  font-weight: 900;
 
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    font-size: 4rem;
+  }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    flex-flow: column nowrap;
     padding: 1.5rem;
+    font-size: 3rem;
   }
-  /* phone */
-  @media ${({ theme }) => theme.phone} {
-    padding: 0;
+`;
+
+const StProject = styled.li`
+  &:hover {
+    color: ${({ theme }) => theme.emphasis};
   }
 `;
 
