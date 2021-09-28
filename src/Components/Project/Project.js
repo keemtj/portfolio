@@ -1,36 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionWrapper from '../Global/SectionWrapper';
-import * as data from '../../Data/projects.js';
-import { useHistory, useLocation } from 'react-router';
-import qs from 'qs';
-import ProjectItem from './ProjectItem';
+import { projects as data } from '../../Data/projects.js';
+import ProjectDetails from './ProjectDetails';
+import useQuery from '../../Hooks/useQuery';
 
 const Project = () => {
-  const history = useHistory();
-  const { search } = useLocation();
-  const query = qs.parse(search, {
-    ignoreQueryPrefix: true,
-  });
-  const hasQueryName = query.name;
-  console.log(hasQueryName);
+  const [queryName, onMoveDetailsPage] = useQuery();
 
-  const onMoveDetailsPage = project => {
-    history.push(`/project?name=${project.name}`);
-  };
   React.useEffect(() => {
     window.scrollTo(0, 0);
+    document.body.parentElement.style.scrollSnapType = 'none';
+    return () =>
+      (document.body.parentElement.style.scrollSnapType = 'y proximity');
   }, []);
 
   return (
     <SectionWrapper>
-      {hasQueryName ? (
-        <ProjectItem />
+      {queryName ? (
+        <ProjectDetails />
       ) : (
         <>
           <StHeading>ALL PROJECTS</StHeading>
           <StProjects>
-            {data.projects().map((project, index) => {
+            {data.map((project, index) => {
               return (
                 <StProject
                   key={index}

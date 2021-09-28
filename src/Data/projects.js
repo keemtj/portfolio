@@ -1,38 +1,111 @@
-export const projects = () => {
-  const arr = [
-    {
-      name: 'instagram',
-    },
-    {
-      name: 'apple',
-    },
-    {
-      name: 'weather',
-    },
-    {
-      name: 'movies',
-    },
-    {
-      name: 'countdown',
-    },
-    {
-      name: 'airbnb',
-    },
-    {
-      name: 'dayone',
-    },
-    {
-      name: 'phonebook',
-    },
-    {
-      name: 'todolist',
-    },
-    {
-      name: 'ediyacoffee',
-    },
-    {
-      name: 'koreanair',
-    },
-  ];
-  return arr;
-};
+export const projects = [
+  {
+    name: 'instagram',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation:
+      'React, Styled-component, redux-thunk, firebase를 이용하여 인스타그램 클론 코딩 완성하기입니다. firebase의 Authentication, Cloud firestore, storage, hosting 서비스를 이용하였습니다. 데이터 베이스와 스토리지에 데이터를 저장하고 불러오는 요청 처리와 완성된 프로젝트의 호스팅을 목표로 진행하였습니다.',
+    features: ['기능1', '기능2'],
+    images: [
+      '/images/instagram/1.png',
+      '/images/instagram/2.png',
+      '/images/instagram/3.png',
+      '/images/instagram/4.png',
+      '/images/instagram/5.png',
+      '/images/instagram/6.png',
+    ],
+    repository: 'https://github.com/keemtj/project-basic-instagram',
+    link: 'https://instagram-73830.web.app',
+  },
+  {
+    name: 'apple',
+    skills: ['React', 'Styled-components'],
+    explanation: 'apple 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: 'https://github.com/keemtj/project-applekorea',
+    link: 'https://keemtj.github.io/project-applekorea',
+  },
+  {
+    name: 'weather',
+    skills: ['HTML', 'CSS', 'Javascript'],
+    explanation: 'weather 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: 'https://github.com/keemtj/project-weather',
+    link: 'https://keemtj.github.io/project-weather',
+  },
+  {
+    name: 'movies',
+    skills: ['HTML', 'CSS', 'Javascript'],
+    explanation: 'movies 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: 'https://github.com/keemtj/project-movieApp',
+    link: 'https://keemtj.github.io/project-movieApp',
+  },
+  {
+    name: 'countdown',
+    skills: ['HTML', 'CSS', 'Javascript'],
+    explanation: 'countdown 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: 'https://github.com/keemtj/project-countdown',
+    link: 'https://keemtj.github.io/project-countdown',
+  },
+  {
+    name: 'airbnb',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'airbnb 설명중',
+    features: ['기능1', '기능2'],
+    images: [
+      'https://user-images.githubusercontent.com/51189962/102017070-f7bb1d80-3da7-11eb-96b7-908bea59ac2d.gif',
+    ],
+    repository: '',
+    link: '',
+  },
+  {
+    name: 'dayone',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'dayone 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: '',
+    link: '',
+  },
+  {
+    name: 'bizmemory',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'bizmemory 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: '',
+    link: '',
+  },
+  {
+    name: 'todolist',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'todolist 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: '',
+    link: '',
+  },
+  {
+    name: 'ediyacoffee',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'ediyacoffee 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: '',
+    link: '',
+  },
+  {
+    name: 'koreanair',
+    skills: ['React', 'Styled-components', 'Redux-thunk', 'Firebase'],
+    explanation: 'koreanair 설명중',
+    features: ['기능1', '기능2'],
+    images: [],
+    repository: '',
+    link: '',
+  },
+];

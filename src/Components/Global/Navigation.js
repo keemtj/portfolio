@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import { Menu } from '@styled-icons/boxicons-regular/Menu';
 import { Close } from '@styled-icons/ionicons-sharp/Close';
 import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
+import useQuery from '../../Hooks/useQuery';
 
 const Navigation = ({ mode, onToggleMode }) => {
+  const [queryName] = useQuery();
   const [open, setOpen] = React.useState(false);
   const onClickMenu = () => {
     setOpen(!open);
@@ -33,9 +36,13 @@ const Navigation = ({ mode, onToggleMode }) => {
           </HashLink>
         </StNavItem>
         <StNavItem>
-          <HashLink smooth to="/#project">
-            PROJECT
-          </HashLink>
+          {queryName ? (
+            <Link to="/project">PROJECT</Link>
+          ) : (
+            <HashLink smooth to="/#project">
+              PROJECT
+            </HashLink>
+          )}
         </StNavItem>
         <StNavItem>
           <HashLink smooth to="/#contact">
