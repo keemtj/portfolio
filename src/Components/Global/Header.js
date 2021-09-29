@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import Navigation from './Navigation';
 
-const Header = ({ mode, onToggleMode, onScrollToTop }) => {
+const Header = ({ mode, onToggleMode, onClickHome }) => {
   return (
     <StHeader>
-      <StHeading onClick={onScrollToTop}>KEEMTJ</StHeading>
+      <StHeading onClick={onClickHome}>KEEMTJ</StHeading>
       <Navigation mode={mode} onToggleMode={onToggleMode} />
     </StHeader>
   );

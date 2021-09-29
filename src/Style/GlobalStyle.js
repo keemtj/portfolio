@@ -25,11 +25,22 @@ const GlobalStyle = createGlobalStyle`
       scroll-snap-type: none;
     }
   }
-  html, body  {
+  html, body {
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.backgroundColor};
     color: ${({ theme }) => theme.fontColor};
+  }
+  body {
+    &::-webkit-scrollbar {
+      width: 0.8rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.fontColor};
+      &:hover {
+        background-color: ${({ theme }) => theme.emphasis};
+      }
+    }
   }
   ul,ol,li {
     list-style: none;
