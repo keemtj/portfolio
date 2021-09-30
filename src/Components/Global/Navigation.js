@@ -9,8 +9,19 @@ import useQuery from '../../Hooks/useQuery';
 const Navigation = ({ mode, onToggleMode }) => {
   const [queryName] = useQuery();
   const [open, setOpen] = React.useState(false);
-  const onClickMenu = () => {
-    setOpen(!open);
+
+  const onClickBurgur = () => {
+    if (window.innerWidth <= 768) {
+      setOpen(!open);
+      document.body.parentElement.style.overflowY = open ? 'scroll' : 'hidden';
+    }
+  };
+
+  const onClickNavItem = () => {
+    if (window.innerWidth <= 768) {
+      setOpen(!open);
+      document.body.parentElement.style.overflowY = open ? 'scroll' : 'hidden';
+    }
   };
 
   // const handleNavState = () => {
@@ -26,26 +37,28 @@ const Navigation = ({ mode, onToggleMode }) => {
     <StNavWrapper>
       <StNavigation open={open} setOpen={setOpen}>
         <StNavItem>
-          <HashLink smooth to="/#home">
+          <HashLink smooth to="/#home" onClick={onClickNavItem}>
             HOME
           </HashLink>
         </StNavItem>
         <StNavItem>
-          <HashLink smooth to="/#about">
+          <HashLink smooth to="/#about" onClick={onClickNavItem}>
             ABOUT
           </HashLink>
         </StNavItem>
         <StNavItem>
           {queryName ? (
-            <Link to="/project">PROJECT</Link>
+            <Link to="/project" onClick={onClickNavItem}>
+              PROJECT
+            </Link>
           ) : (
-            <HashLink smooth to="/#project">
+            <HashLink smooth to="/#project" onClick={onClickNavItem}>
               PROJECT
             </HashLink>
           )}
         </StNavItem>
         <StNavItem>
-          <HashLink smooth to="/#contact">
+          <HashLink smooth to="/#contact" onClick={onClickNavItem}>
             CONTACT
           </HashLink>
         </StNavItem>
@@ -55,7 +68,7 @@ const Navigation = ({ mode, onToggleMode }) => {
           </StToggleModeButton>
         </StNavItem>
       </StNavigation>
-      <StBurgur onClick={onClickMenu}>
+      <StBurgur onClick={onClickBurgur}>
         {open ? <StCloseIcon /> : <StMenuIcon />}
       </StBurgur>
     </StNavWrapper>

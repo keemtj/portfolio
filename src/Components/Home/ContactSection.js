@@ -86,8 +86,12 @@ const StHeading = styled.h2`
   }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    padding: 9rem 1.5rem 1.5rem 1.5rem;
+    padding: 7rem 1.5rem 1.5rem 1.5rem;
     font-size: 4rem;
+  }
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
   }
 `;
 
@@ -113,8 +117,12 @@ const StForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
   gap: 3rem;
-  width: 100%;
+  width: 50%;
 
+  /* tablet */
+  @media ${({ theme }) => theme.tablet} {
+    width: 100%;
+  }
   /* phone */
   @media ${({ theme }) => theme.phone} {
     gap: 1.5rem;
@@ -131,7 +139,7 @@ const StInputWrapper = styled.div`
 const inputStyle = css`
   border-radius: unset;
   padding: 1rem;
-  width: 60%;
+  width: 100%;
   font-size: 2.5rem;
   font-weight: 900;
   &::placeholder {
@@ -141,10 +149,6 @@ const inputStyle = css`
     font-style: italic;
   }
 
-  /* laptop */
-  @media ${({ theme }) => theme.laptop} {
-    width: 65%;
-  }
   /* tablet */
   @media ${({ theme }) => theme.tablet} {
     width: 100%;
@@ -177,7 +181,7 @@ const StTextarea = styled.textarea`
 const StButton = styled.button`
   border: 3px solid ${({ theme }) => theme.fontColor};
   background: ${({ theme }) => theme.backgroundColor};
-  width: 60%;
+  width: 100%;
   height: 5rem;
   color: ${({ theme }) => theme.fontColor};
   font-size: 2.5rem;
@@ -187,7 +191,6 @@ const StButton = styled.button`
   &:hover,
   &:focus {
     ${({ theme }) => {
-      console.log(theme.state);
       return theme.state === 'light'
         ? css`
             background: ${theme.black};

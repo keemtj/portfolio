@@ -7,8 +7,9 @@ const HomeSection = () => {
     <SectionWrapper id="home">
       <StBackground>
         <StTextBox>
-          <div>{'Hi, There.'}</div>
-          <div>{"I'm Taejin Kim."}</div>
+          <div>{"I'm"}</div>
+          <div>{'Taejin Kim.'}</div>
+          <div>{'Frontend Developer.'}</div>
         </StTextBox>
       </StBackground>
     </SectionWrapper>
@@ -49,6 +50,10 @@ const StTextBox = styled.div`
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
     font-size: 4rem;
+  }
+  /* mobile */
+  @media ${({ theme }) => theme.mobile} {
+    font-size: 3rem;
   }
 `;
 

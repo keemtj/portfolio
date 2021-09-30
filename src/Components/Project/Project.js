@@ -9,11 +9,12 @@ const Project = () => {
   const [queryName, onMoveDetailsPage] = useQuery();
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    console.log('effect?');
     document.body.parentElement.style.scrollSnapType = 'none';
     return () =>
       (document.body.parentElement.style.scrollSnapType = 'y proximity');
-  }, []);
+  }, [queryName]);
 
   return (
     <SectionWrapper>

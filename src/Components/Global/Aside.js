@@ -41,7 +41,10 @@ const StToggleButton = styled.button`
   &:hover {
     color: ${({ theme }) => theme.emphasis};
   }
-
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 2.5rem;
+  }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
     display: none;
@@ -57,6 +60,14 @@ const StScrollToTopButton = styled.button`
 
   &:hover {
     color: ${({ theme }) => theme.emphasis};
+  }
+  /* laptop */
+  @media ${({ theme }) => theme.laptop} {
+    font-size: 2.5rem;
+  }
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    font-size: 2rem;
   }
 `;
 

@@ -15,6 +15,7 @@ function App() {
   const history = useHistory();
 
   const onClickHome = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     history.push('/');
   };
   const onScrollToTop = () => {

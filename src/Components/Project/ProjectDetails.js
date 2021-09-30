@@ -21,27 +21,19 @@ const ProjectDetails = () => {
       <StProject>
         <StProjectDetails>
           <StProjectDetailsItem>
-            <StSubtitle>Explanation</StSubtitle>
+            <StSubtitle>EXPLANATION</StSubtitle>
             <StData>{explanation}</StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
-            <StSubtitle>Feature</StSubtitle>
-            <StData>
-              {features.map((feature, index) => (
-                <StSkill key={index}>{feature}</StSkill>
-              ))}
-            </StData>
+            <StSubtitle>FEATURES</StSubtitle>
+            <StData>{features}</StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
-            <StSubtitle>Skills</StSubtitle>
-            <StData>
-              {skills.map((skill, index) => (
-                <StSkill key={index}>{skill}</StSkill>
-              ))}
-            </StData>
+            <StSubtitle>SKILLS</StSubtitle>
+            <StData>{skills}</StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
-            <StSubtitle>Repository</StSubtitle>
+            <StSubtitle>REPOSITORY</StSubtitle>
             <StData>
               {
                 <a
@@ -55,7 +47,7 @@ const ProjectDetails = () => {
             </StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
-            <StSubtitle>Link</StSubtitle>
+            <StSubtitle>LINK</StSubtitle>
             <StData>
               {
                 <a href={`${link}`} target="_blank" rel="noreferrer noopener">
@@ -87,8 +79,12 @@ const StHeading = styled.h2`
   }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
-    padding: 9rem 1.5rem 1.5rem 1.5rem;
+    padding: 7rem 1.5rem 1.5rem 1.5rem;
     font-size: 4rem;
+  }
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
   }
 `;
 
@@ -135,6 +131,9 @@ const StProjectDetails = styled.div`
 const StProjectDetailsItem = styled.div`
   display: flex;
   flex-flow: row nowrap;
+  & + & {
+    margin-top: 1rem;
+  }
   /* mobile */
   @media ${({ theme }) => theme.mobile} {
     flex-flow: column nowrap;
@@ -150,6 +149,7 @@ const StSubtitle = styled.div`
 `;
 
 const StData = styled.div`
+  font-style: normal;
   &:hover {
     color: ${({ theme }) => theme.emphasis};
     cursor: pointer;
@@ -161,10 +161,10 @@ const StData = styled.div`
   @media ${({ theme }) => theme.mobile} {
     font-size: 1.5rem;
   }
-`;
-
-const StSkill = styled.span`
-  margin-right: 1rem;
+  /* phone */
+  @media ${({ theme }) => theme.phone} {
+    margin-top: 0.5rem;
+  }
 `;
 
 export default ProjectDetails;
