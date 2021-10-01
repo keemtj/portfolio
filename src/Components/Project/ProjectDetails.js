@@ -7,7 +7,7 @@ import Slider from '../Global/Slider';
 
 const ProjectDetails = () => {
   const [queryName] = useQuery();
-  const { skills, explanation, features, repository, link } = datas.find(
+  const { skills, overview, features, github, link, images } = datas.find(
     data => data.name === queryName,
   );
 
@@ -21,8 +21,8 @@ const ProjectDetails = () => {
       <StProject>
         <StProjectDetails>
           <StProjectDetailsItem>
-            <StSubtitle>EXPLANATION</StSubtitle>
-            <StData>{explanation}</StData>
+            <StSubtitle>OVERVIEW</StSubtitle>
+            <StData>{overview}</StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
             <StSubtitle>FEATURES</StSubtitle>
@@ -33,15 +33,11 @@ const ProjectDetails = () => {
             <StData>{skills}</StData>
           </StProjectDetailsItem>
           <StProjectDetailsItem>
-            <StSubtitle>REPOSITORY</StSubtitle>
+            <StSubtitle>GITHUB</StSubtitle>
             <StData>
               {
-                <a
-                  href={`${repository}`}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  {repository}
+                <a href={`${github}`} target="_blank" rel="noreferrer noopener">
+                  {github}
                 </a>
               }
             </StData>
@@ -57,7 +53,7 @@ const ProjectDetails = () => {
             </StData>
           </StProjectDetailsItem>
         </StProjectDetails>
-        <Slider />
+        <Slider images={images} />
       </StProject>
     </SectionWrapper>
   );

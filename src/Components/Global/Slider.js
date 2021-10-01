@@ -8,7 +8,7 @@ import { ArrowSmRight } from '@styled-icons/heroicons-solid/ArrowSmRight';
 export const onClickPrev = () => console.log('prev');
 export const onClickNext = () => console.log('next');
 
-const Slider = () => {
+const Slider = ({ images }) => {
   const arrowStyles = {};
   return (
     <StSlider>
@@ -43,24 +43,11 @@ const Slider = () => {
           )
         }
       >
-        <div>
-          <img src="/images/instagram/1.png" />
-        </div>
-        <div>
-          <img src="/images/instagram/2.png" />
-        </div>
-        <div>
-          <img src="/images/instagram/3.png" />
-        </div>
-        <div>
-          <img src="/images/instagram/4.png" />
-        </div>
-        <div>
-          <img src="/images/instagram/5.png" />
-        </div>
-        <div>
-          <img src="/images/instagram/6.png" />
-        </div>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img src={image} />
+          </div>
+        ))}
       </Carousel>
     </StSlider>
   );
