@@ -1,12 +1,22 @@
 import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
 import styled from 'styled-components';
+import useFadeIn from '../../Hooks/useFadeIn';
 
 const AboutSection = () => {
+  const ref1 = useFadeIn('up', 0.5, 0.1);
+  const ref2 = useFadeIn('up', 0.5, 0.1);
+  const ref3 = useFadeIn('up', 0.5, 0.1);
+  const { ref: headingRef, style: headingStyle } = ref1;
+  const { ref: introduceRef, style: introduceStyle } = ref2;
+  const { ref: informationRef, style: informationStyle } = ref3;
+
   return (
     <SectionWrapper id="about">
-      <StHeading>ABOUT</StHeading>
-      <StIntroduceBox>
+      <StHeading ref={headingRef} style={headingStyle}>
+        ABOUT
+      </StHeading>
+      <StIntroduceBox ref={introduceRef} style={introduceStyle}>
         <div>안녕하세요. 웹 프론트엔드 개발자 김태진입니다.</div>
         <br />
         <div>
@@ -22,7 +32,7 @@ const AboutSection = () => {
           싶습니다.
         </div>
       </StIntroduceBox>
-      <StInformationBox>
+      <StInformationBox ref={informationRef} style={informationStyle}>
         <StInformationHeadings>
           <div>GITHUB</div>
           <div>EMAIL</div>

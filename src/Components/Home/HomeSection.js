@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import SectionWrapper from '../Global/SectionWrapper';
+import uesFadeIn from '../../Hooks/useFadeIn';
 
 const HomeSection = () => {
+  const { ref, style } = uesFadeIn('up', 0.5);
   return (
     <SectionWrapper id="home">
       <StBackground>
-        <StTextBox>
+        <StTextBox ref={ref} style={style}>
           <div>{"I'm"}</div>
           <div>{'Taejin Kim.'}</div>
           <div>{'Frontend Developer.'}</div>
