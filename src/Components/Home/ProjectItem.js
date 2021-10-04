@@ -8,7 +8,7 @@ const ProjectItem = ({ filename, name, index }) => {
   const onMouseEnter = index => setHover(index);
   const onMouseLeave = () => setHover(null);
   const history = useHistory();
-  const ref = useFadeIn('up', 0.5);
+  const ref = useFadeIn('up', 0.1);
 
   return (
     <StProjectItem

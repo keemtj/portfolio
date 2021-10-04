@@ -16,7 +16,7 @@ const StFooter = styled.footer`
   align-items: center;
   justify-content: center;
   background: ${({ theme }) => theme.backgroundColor};
-  height: 5rem;
+  height: 6rem;
   font-size: 1.2rem;
   font-weight: 500;
   font-style: normal;

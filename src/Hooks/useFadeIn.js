@@ -3,7 +3,7 @@ import { useRef, useEffect } from 'react';
 const useFadeIn = (
   direction = 'stop',
   threshold = 0,
-  percent = 30,
+  percent = 15,
   delay = 0,
 ) => {
   const dom = useRef();

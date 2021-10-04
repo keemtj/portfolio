@@ -5,6 +5,7 @@ import { projects as data } from '../../Data/projects.js';
 import ProjectDetails from './ProjectDetails';
 import useQuery from '../../Hooks/useQuery';
 import useFadeIn from '../../Hooks/useFadeIn';
+import { HashLink } from 'react-router-hash-link';
 
 const Project = () => {
   const [queryName, onMoveDetailsPage] = useQuery();
@@ -14,8 +15,10 @@ const Project = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
     document.body.parentElement.style.scrollSnapType = 'none';
-    return () =>
-      (document.body.parentElement.style.scrollSnapType = 'y proximity');
+    return () => {
+      if (window.innerWidth <= 768) return;
+      document.body.parentElement.style.scrollSnapType = 'y proximity';
+    };
   }, [queryName]);
 
   return (
@@ -24,7 +27,7 @@ const Project = () => {
         <ProjectDetails />
       ) : (
         <>
-          <StHeading {...ref1}>ALL PROJECTS</StHeading>
+          <StHeading {...ref1}>ALL</StHeading>
           <StProjects {...ref2}>
             {data.map((project, index) => {
               return (
@@ -36,6 +39,9 @@ const Project = () => {
                 </StProject>
               );
             })}
+            <StButton>
+              <StLink to="/#project">GO BACK HOME</StLink>
+            </StButton>
           </StProjects>
         </>
       )}
@@ -95,6 +101,14 @@ const StProject = styled.li`
   &:hover {
     color: ${({ theme }) => theme.emphasis};
   }
+`;
+
+const StButton = styled(StProject)``;
+
+const StLink = styled(HashLink)`
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
 `;
 
 export default Project;

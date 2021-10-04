@@ -46,7 +46,7 @@ const AboutSection = () => {
           </StData>
           <StData>keemgreat@gmail.com</StData>
           <StData>+82 010-6415-4738</StData>
-          <StData>Gwanak-gu, Seoul, Republic of Korea</StData>
+          <StData>Gwanak-gu, Seoul, South Korea</StData>
         </StInformationDatas>
       </StInformationBox>
     </SectionWrapper>

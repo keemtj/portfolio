@@ -208,7 +208,7 @@ const StButton = styled.button`
 
   /* laptop */
   @media ${({ theme }) => theme.laptop} {
-    width: 65%;
+    width: 100%;
   }
   /* tablet */
   @media ${({ theme }) => theme.tablet} {

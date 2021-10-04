@@ -10,7 +10,8 @@ export const onClickPrev = () => console.log('prev');
 export const onClickNext = () => console.log('next');
 
 const Slider = ({ images }) => {
-  const ref = useFadeIn('up', 0);
+  const ref = useFadeIn('up', 0.1);
+
   return (
     <StSlider {...ref}>
       <Carousel
