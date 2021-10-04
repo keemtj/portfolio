@@ -1,13 +1,11 @@
 import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
-import styled, { css } from 'styled-components';
-import { useHistory } from 'react-router';
+import styled from 'styled-components';
+import useFadeIn from '../../Hooks/useFadeIn';
+import ProjectItem from './ProjectItem';
 
 const ProjectSection = () => {
-  const [hover, setHover] = React.useState(null);
-  const onMouseEnter = index => setHover(index);
-  const onMouseLeave = () => setHover(null);
-  const history = useHistory();
+  const ref = useFadeIn('up', 0.5);
   const projects = [
     {
       filename: 'insta.png',
@@ -33,30 +31,16 @@ const ProjectSection = () => {
 
   return (
     <SectionWrapper id="project">
-      <StHeading>PROJECT</StHeading>
+      <StHeading {...ref}>PROJECT</StHeading>
       <StProjects>
         {projects.map(({ filename, name }, index) => {
           return (
-            <StProjectItem
+            <ProjectItem
               key={index}
-              onMouseEnter={() => onMouseEnter(index)}
-              onMouseLeave={onMouseLeave}
-              onClick={() => history.push(`/project?name=${name}`)}
-            >
-              <StImageWrapper>
-                {hover === index && (
-                  <>
-                    <StCover />
-                    <StCoverText>VIEW DETAILS</StCoverText>
-                  </>
-                )}
-                <StImage
-                  hover={hover === index}
-                  src={`/images/${filename}`}
-                  alt={`${name}`}
-                />
-              </StImageWrapper>
-            </StProjectItem>
+              filename={filename}
+              name={name}
+              index={index}
+            />
           );
         })}
       </StProjects>
@@ -108,57 +92,6 @@ const StProjects = styled.ul`
   @media ${({ theme }) => theme.phone} {
     padding: 0;
   }
-`;
-
-const StProjectItem = styled.li`
-  width: calc((100% / 2) - 1.5rem);
-  position: relative;
-
-  /* mobile */
-  @media ${({ theme }) => theme.mobile} {
-    width: 100%;
-  }
-`;
-
-const StCover = styled.div`
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0.5;
-`;
-
-const StCoverText = styled.div`
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  font-size: 4vw;
-  font-weight: 900;
-  color: ${({ theme }) => theme.white};
-
-  /* mobile */
-  @media ${({ theme }) => theme.mobile} {
-    font-size: 3.5rem;
-  }
-`;
-
-const StImageWrapper = styled.div`
-  overflow: hidden;
-`;
-
-const StImage = styled.img`
-  width: 100%;
-  transition: all 0.5s ease;
-  ${({ hover }) =>
-    hover &&
-    css`
-      transform: scale(1.1);
-    `}
 `;
 
 export default ProjectSection;

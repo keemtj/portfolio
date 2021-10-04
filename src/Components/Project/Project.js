@@ -4,13 +4,15 @@ import SectionWrapper from '../Global/SectionWrapper';
 import { projects as data } from '../../Data/projects.js';
 import ProjectDetails from './ProjectDetails';
 import useQuery from '../../Hooks/useQuery';
+import useFadeIn from '../../Hooks/useFadeIn';
 
 const Project = () => {
   const [queryName, onMoveDetailsPage] = useQuery();
+  const ref1 = useFadeIn('up', 0.5);
+  const ref2 = useFadeIn('up', 0.5);
 
   React.useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    console.log('effect?');
+    window.scrollTo(0, 0);
     document.body.parentElement.style.scrollSnapType = 'none';
     return () =>
       (document.body.parentElement.style.scrollSnapType = 'y proximity');
@@ -22,8 +24,8 @@ const Project = () => {
         <ProjectDetails />
       ) : (
         <>
-          <StHeading>ALL PROJECTS</StHeading>
-          <StProjects>
+          <StHeading {...ref1}>ALL PROJECTS</StHeading>
+          <StProjects {...ref2}>
             {data.map((project, index) => {
               return (
                 <StProject

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import SectionWrapper from '../Global/SectionWrapper';
 import { projects as datas } from '../../Data/projects';
 import useQuery from '../../Hooks/useQuery';
+import useFadeIn from '../../Hooks/useFadeIn';
 import Slider from '../Global/Slider';
 
 const ProjectDetails = () => {
@@ -10,6 +11,8 @@ const ProjectDetails = () => {
   const { skills, overview, features, github, link, images } = datas.find(
     data => data.name === queryName,
   );
+  const ref1 = useFadeIn('up', 0.1);
+  const ref2 = useFadeIn('up', 0.1);
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,9 +20,9 @@ const ProjectDetails = () => {
 
   return (
     <SectionWrapper>
-      <StHeading>{queryName.toUpperCase()}</StHeading>
+      <StHeading {...ref1}>{queryName.toUpperCase()}</StHeading>
       <StProject>
-        <StProjectDetails>
+        <StProjectDetails {...ref2}>
           <StProjectDetailsItem>
             <StSubtitle>OVERVIEW</StSubtitle>
             <StData>{overview}</StData>

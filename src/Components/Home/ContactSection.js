@@ -2,15 +2,18 @@ import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
 import styled, { css } from 'styled-components';
 import useInputs from '../../Hooks/useInputs';
+import useFadeIn from '../../Hooks/useFadeIn';
 
 const ContactSection = () => {
   const [form, onChange, onSubmit] = useInputs();
   const { name, email, phone, subject, message } = form;
+  const ref1 = useFadeIn('up', 0);
+  const ref2 = useFadeIn('up', 0);
 
   return (
     <SectionWrapper id="contact">
-      <StHeading>CONTACT</StHeading>
-      <StContact>
+      <StHeading {...ref1}>CONTACT</StHeading>
+      <StContact {...ref2}>
         <StForm onSubmit={onSubmit} autoComplete="off">
           <StInputWrapper>
             <StInput

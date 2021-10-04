@@ -4,11 +4,11 @@ import SectionWrapper from '../Global/SectionWrapper';
 import uesFadeIn from '../../Hooks/useFadeIn';
 
 const HomeSection = () => {
-  const { ref, style } = uesFadeIn('up', 0.5);
+  const ref1 = uesFadeIn('up', 0.5);
   return (
     <SectionWrapper id="home">
       <StBackground>
-        <StTextBox ref={ref} style={style}>
+        <StTextBox {...ref1}>
           <div>{"I'm"}</div>
           <div>{'Taejin Kim.'}</div>
           <div>{'Frontend Developer.'}</div>

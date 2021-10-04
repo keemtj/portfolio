@@ -4,14 +4,15 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { ArrowSmLeft } from '@styled-icons/heroicons-solid/ArrowSmLeft';
 import { ArrowSmRight } from '@styled-icons/heroicons-solid/ArrowSmRight';
+import useFadeIn from '../../Hooks/useFadeIn';
 
 export const onClickPrev = () => console.log('prev');
 export const onClickNext = () => console.log('next');
 
 const Slider = ({ images }) => {
-  const arrowStyles = {};
+  const ref = useFadeIn('up', 0);
   return (
-    <StSlider>
+    <StSlider {...ref}>
       <Carousel
         infiniteLoop
         showThumbs={true}
@@ -24,7 +25,7 @@ const Slider = ({ images }) => {
               type="button"
               onClick={onClickPrev}
               title={label}
-              style={{ ...arrowStyles, left: '1rem' }}
+              style={{ left: '1rem' }}
             >
               <StPrevIcon />
             </StButton>
@@ -36,7 +37,7 @@ const Slider = ({ images }) => {
               type="button"
               onClick={onClickNext}
               title={label}
-              style={{ ...arrowStyles, right: '1rem' }}
+              style={{ right: '1rem' }}
             >
               <StNextIcon />
             </StButton>
@@ -73,13 +74,17 @@ const StSlider = styled.div`
   }
 `;
 
-const StButton = styled.button`
+const buttonStyle = css`
   position: absolute;
   z-index: 2;
   top: calc(50% - 1.5rem);
   background: ${({ theme }) => theme.black};
   width: 3rem;
   height: 3rem;
+`;
+
+const StButton = styled.button`
+  ${buttonStyle}
 `;
 
 const iconStyle = css`

@@ -1,6 +1,11 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect } from 'react';
 
-const useFadeIn = (direction = 'stop', threshold = 0, delay = 0) => {
+const useFadeIn = (
+  direction = 'stop',
+  threshold = 0,
+  percent = 30,
+  delay = 0,
+) => {
   const dom = useRef();
 
   const handleDirection = direction => {
@@ -8,30 +13,29 @@ const useFadeIn = (direction = 'stop', threshold = 0, delay = 0) => {
       case 'stop':
         return 'translate3d(0,0,0)';
       case 'up':
-        return 'translate3d(0, 30%, 0)';
+        return `translate3d(0, ${percent}%, 0)`;
       case 'down':
-        return;
+        return `translate3d(0, -${percent}%, 0)`;
       case 'right':
-        return;
+        return `translate3d(${percent}%, 0, 0)`;
       case 'left':
-        return;
+        return `translate3d(-${percent}%, 0, 0)`;
       default:
         return;
     }
   };
 
-  const handleScroll = useCallback(([entry]) => {
+  const handleScroll = ([entry]) => {
     const { current } = dom;
-
     if (entry.isIntersecting) {
-      current.style.transitionProperty = 'opacity transform';
-      current.style.transitionDuration = '1s';
-      current.style.transitionTimingFunction = 'cubic-bezier(0, 0, 0.2, 1)';
-      current.style.transitionDelay = `${delay}s`;
       current.style.opacity = 1;
       current.style.transform = 'translate3d(0, 0, 0)';
+      current.style.transitionProperty = 'opacity transform';
+      current.style.transitionDuration = '1s';
+      current.style.transitionTimingFunction = 'ease';
+      current.style.transitionDelay = `${delay}s`;
     }
-  }, []);
+  };
 
   useEffect(() => {
     let observer;
