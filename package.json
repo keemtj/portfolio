@@ -17,7 +17,8 @@
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
     "styled-icons": "^10.38.0",
-    "styled-reset": "^4.3.4"
+    "styled-reset": "^4.3.4",
+    "sweetalert2": "^11.1.7"
   },
   "scripts": {
     "start": "react-scripts start",

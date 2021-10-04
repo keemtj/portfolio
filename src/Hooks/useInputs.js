@@ -1,5 +1,6 @@
 import { useReducer, useEffect } from 'react';
 import { init, sendForm } from 'emailjs-com';
+import Swal from 'sweetalert2';
 
 const initialState = {
   email: '',
@@ -48,9 +49,11 @@ const useInputs = () => {
       result => {
         console.log('Success status: 200,', result.text);
         dispatch({ type: 'RESET' });
+        Swal.fire('Thank you!', 'Your message has been received!', 'success');
       },
       error => {
         console.log('Failure status: 400,', error.text);
+        Swal.fire('Oops...', 'Something went wrong!', 'error');
       },
     );
   };
