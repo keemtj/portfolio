@@ -29,3 +29,4 @@ yarn-error.log*
 .firebaserc
 .firebase
 firebase.json
+firebase-debug.log
