@@ -1,70 +1,170 @@
-# Getting Started with Create React App
+# **PORTFOLIO**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **📗 목차**
 
-## Available Scripts
+<b>
 
-In the project directory, you can run:
+- 📝 [개요](#-포트폴리오-개요)
+- 🛠 [기술 및 도구](#-기술-및-도구)
+- 🔗 [링크](#-링크)
+- 👨🏻‍💻 [기능 구현](#-기능-구현)
+  - [라이트/다크 모드](#1-라이트/다크-모드)
+  - [Hash Link](#2-Hash-Link)
+  - [반응형 웹](#3-반응형-웹)
+  - [Email 전송](#4-Email-전송)
+  - [Open graph](#5-Open-graph)
+  - [기타](#6-기타-기능)
+- 🚀 [배포](#-배포)
+- ⏰ [커밋 히스토리](#-커밋-히스토리)
 
-### `yarn start`
+</b>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## **📝 포트폴리오 개요**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<img width="100%" alt="메인 페이지" src="https://user-images.githubusercontent.com/51189962/136147406-e80d9f8a-49b9-42bc-aa3a-301fff182608.png" />
 
-### `yarn test`
+> **프로젝트:** 개인 포트폴리오 사이트
+>
+> **기획 및 제작:** 김태진
+>
+> **분류:** 개인 프로젝트
+>
+> **제작 기간:** 2021.09 ~ 10.
+>
+> **배포일:** 2021.10.05.
+>
+> **주요 기능:** 라이트/다크 모드, 반응형 웹, Hash Link, Email 전송, 배포 및 커스텀 도메인 연결, open graph
+>
+> **사용 기술:** React, Styled-components, Firebase Hosting
+>
+> **문의:** keemgreat@gmail.com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `yarn build`
+## **🛠 기술 및 도구**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![React](https://img.shields.io/badge/React-53C1DE?style=flat-square&logo=react&logoColor=white) ![Styled-Components](https://img.shields.io/badge/Styled_Components-DB7C85?style=flat-square&logo=styled-components&logoColor=white) ![Firebase](https://img.shields.io/badge/Firebase-%23039BE5.svg?style=flat-square&logo=firebase)
+![GitHub](https://img.shields.io/badge/Github-%23121011.svg?style=flat-square&logo=github&logoColor=white)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## **🔗 링크**
 
-### `yarn eject`
+**링크:** [https://keemtj.com](https://keemtj.com)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br />
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **👨🏻‍💻 기능 구현**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### **1. 라이트/다크 모드**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img width="100%" alt="라이트/다크모드" src="https://user-images.githubusercontent.com/51189962/136142455-dd9bbdf1-4676-408c-bdc2-009f133e92db.gif" />
 
-## Learn More
+- 라이트 및 다크모드 기능 구현
+- 사용자의 시스템 모드에 맞게 theme이 설정되도록 구현
+- 사용자가 설정한 테마가 localStorage에 저장되어 한번 설정한 이후 같은 theme을 보여주도록 구현
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **2. Hash Link**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="100%" alt="hashlink" src="https://user-images.githubusercontent.com/51189962/136143186-aeb70c36-8e21-40e7-b937-deea0e66ad18.gif" />
 
-### Code Splitting
+- Hash Link링크를 이용하여 네비게이션에서 메뉴 클릭시 해당 영역으로 스크롤되도록 구현
+- 해당하는 메뉴의 영역은 Full page.js와 유사하게 스타일링함
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### **3. 반응형 웹**
 
-### Analyzing the Bundle Size
+<img width="100%" alt="반응형" src="https://user-images.githubusercontent.com/51189962/136144110-0a5cb56e-1dcf-4bc8-b7d8-b93bbb100744.gif" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 5개의 endpoint를 두고 반응형을 구현함
 
-### Making a Progressive Web App
+```javascript
+// media.js
+const deviceSizes = {
+  desktop: '1440px',
+  laptop: '1280px',
+  tablet: '1024px',
+  mobile: '768px',
+  phone: '480px',
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+const media = {
+  desktop: `screen and (max-width: ${deviceSizes.desktop})`,
+  laptop: `screen and (max-width: ${deviceSizes.laptop})`,
+  tablet: `screen and (max-width: ${deviceSizes.tablet})`,
+  mobile: `screen and (max-width: ${deviceSizes.mobile})`,
+  phone: `screen and (max-width: ${deviceSizes.phone})`,
+};
 
-### Advanced Configuration
+export { deviceSizes, media };
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<img width="100%" alt="반응형 네비게이션" src="https://user-images.githubusercontent.com/51189962/136144313-2a67d258-3ec1-4517-80fc-3f67b957dff5.gif" />
 
-### Deployment
+- 네비게이션 메뉴의 경우 mobile(768px)을 기준으로 그 이상일 경우 상단바, 이하일 경우 햄버거메뉴로 변경
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **4. Email 전송**
 
-### `yarn build` fails to minify
+<img width="100%" alt="이메일 발신" src="https://user-images.githubusercontent.com/51189962/136146784-b8b42395-8a05-402a-b393-d0aa95580c7f.gif" />
+<img width="100%" alt="이메일 수신" src="https://user-images.githubusercontent.com/51189962/136147118-ae829b7e-7ca5-4ef0-92e2-f7adc70ddb29.png" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- EmailJS를 이용하여 서버없이 메일 서비스를 이용할 수 있도록 구현
+- Sweetalert를 이용하여 커스텀 alert를 구현
+- https://emailjs.com
+- https://sweetalert2.github.io/
+
+### **5. Open graph**
+
+<img width="100%" alt="스크린샷 2021-10-06 15 02 30" src="https://user-images.githubusercontent.com/51189962/136148865-7b6cfd30-ae66-410f-89fa-16f9ad883c74.png" />
+
+<img width="100%" alt="스크린샷 2021-10-06 15 03 15" src="https://user-images.githubusercontent.com/51189962/136148961-28e8c84b-b5fb-4052-9150-7c20e6af3cbc.png" />
+
+```html
+<!-- index.html -->
+<meta property="og:title" content="김태진 • Frontend Developer" />
+<meta property="og:description" content="프론트엔드 개발자 김태진입니다." />
+<meta property="og:image" content="%PUBLIC_URL%/thumb.png" />
+<meta property="og:url" content="https://keemtj.com/" />
+<meta property="og:type" content="website" />
+```
+
+- meta tags를 통해 Facebook, twitter, linkedin, discord, kakao talk 등 링크를 전달 했을 때 링크에 대한 정보를 볼 수 있도록 구현
+- https://www.opengraph.xyz
+
+### **6. 기타 기능**
+
+- favicon.ico 생성
+- Fade-in transform
+- 프로젝트 페이지
+- React-responsive-carousel 커스텀
+
+## **🚀 배포**
+
+- 첫 배포
+
+```
+$ npm install -g firebase-tools
+$ firebase init
+$ firebase login
+  > HOSTING
+  > Directroy? build
+$ yarn build
+$ firebase deploy
+```
+
+- 수정 후 배포
+
+```
+$ yarn build
+$ firebase deploy
+```
+
+- 커스텀 도메인: Godaddy에서 커스텀 도매인 구매(https://keemtj.com)
+
+<br />
+
+## ⏰ 커밋 히스토리
+
+[내 커밋 히스토리 보러가기](https://github.com/keemtj/portfolio/commits?author=keemtj)
+<br/>
+<br/>
+<br/>
