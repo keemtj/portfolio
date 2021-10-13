@@ -25,7 +25,7 @@ export const projects = [
       'Grid 레이아웃, SPA, 메인 페이지와 Mac 제품 페이지, Intersection Observer API를 이용하여 특정 스크롤에서 동영상 재생 및 효과를 넣는 기능',
     skills: 'React, Styled-components',
     github: 'https://github.com/keemtj/project-applekorea',
-    link: 'https://keemtj.github.io/project-applekorea/mac',
+    link: 'https://keemtj.github.io/project-applekorea',
     images: [
       '/images/apple/1.png',
       '/images/apple/2.png',
