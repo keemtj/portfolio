@@ -2,11 +2,21 @@ import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
 import styled from 'styled-components';
 import useFadeIn from '../../Hooks/useFadeIn';
+import RESUME from '../../assets/이력서_프론트엔드_김태진.pdf';
+import COVER_LETTER from '../../assets/자기소개서_프론트엔드_김태진.pdf';
 
 const AboutSection = () => {
   const ref1 = useFadeIn('up', 0.5);
   const ref2 = useFadeIn('up', 0.5);
   const ref3 = useFadeIn('up', 0.5);
+
+  const onClickCoverLetter = () => {
+    window.open(COVER_LETTER, '_blank');
+  };
+
+  const onClickResume = () => {
+    window.open(RESUME, '_blank');
+  };
 
   return (
     <SectionWrapper id="about">
@@ -33,6 +43,8 @@ const AboutSection = () => {
           <div>EMAIL</div>
           <div>PHONE</div>
           <div>ADDRESS</div>
+          <div>COVER LETTER</div>
+          <div>RESUME</div>
         </StInformationHeadings>
         <StInformationDatas>
           <StData>
@@ -47,6 +59,8 @@ const AboutSection = () => {
           <StData>keemgreat@gmail.com</StData>
           <StData>+82 010-6415-4738</StData>
           <StData>Gwanak-gu, Seoul, South Korea</StData>
+          <StData onClick={onClickCoverLetter}>DOWNLOAD</StData>
+          <StData onClick={onClickResume}>DOWNLOAD</StData>
         </StInformationDatas>
       </StInformationBox>
     </SectionWrapper>
