@@ -2,8 +2,8 @@ import React from 'react';
 import SectionWrapper from '../Global/SectionWrapper';
 import styled from 'styled-components';
 import useFadeIn from '../../Hooks/useFadeIn';
-import RESUME from '../../assets/이력서_프론트엔드_김태진.pdf';
-import COVER_LETTER from '../../assets/자기소개서_프론트엔드_김태진.pdf';
+import RESUME from '../../assets/프론트엔드_이력서_김태진.pdf';
+import COVER_LETTER from '../../assets/프론트엔드_자기소개서_김태진.pdf';
 
 const AboutSection = () => {
   const ref1 = useFadeIn('up', 0.5);
